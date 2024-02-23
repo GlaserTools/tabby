@@ -16,8 +16,8 @@ import {
   LicenseStatus,
   LicenseType
 } from '../gql/generates/graphql'
-import { getLicenseInfo } from './query'
 import { cn } from '../utils'
+import { getLicenseInfo } from './query'
 
 interface LicenseProviderProps {
   children: React.ReactNode
@@ -102,14 +102,17 @@ const LicenseGuard = React.forwardRef<
 
   return (
     <HoverCard open={open} onOpenChange={onOpenChange} openDelay={100}>
-      <HoverCardContent side="top" collisionPadding={16} className="w-[300px] flex flex-col text-sm">
-        <p>
-          This feature is only available with enterprise plan.
-        </p>
-        <p>
-          Subscribe to to use this feature.
-        </p>
-        <Link className={cn(buttonVariants({ size: "sm" }), "mt-4")} href="/settings/subscription">
+      <HoverCardContent
+        side="top"
+        collisionPadding={16}
+        className="flex w-[300px] flex-col text-sm"
+      >
+        <p>This feature is only available with enterprise plan.</p>
+        <p>Subscribe to to use this feature.</p>
+        <Link
+          className={cn(buttonVariants({ size: 'sm' }), 'mt-4')}
+          href="/settings/subscription"
+        >
           Subscribe
         </Link>
       </HoverCardContent>
