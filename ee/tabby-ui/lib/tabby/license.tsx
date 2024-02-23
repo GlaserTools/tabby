@@ -17,6 +17,7 @@ import {
   LicenseType
 } from '../gql/generates/graphql'
 import { getLicenseInfo } from './query'
+import { cn } from '../utils'
 
 interface LicenseProviderProps {
   children: React.ReactNode
@@ -101,16 +102,16 @@ const LicenseGuard = React.forwardRef<
 
   return (
     <HoverCard open={open} onOpenChange={onOpenChange} openDelay={100}>
-      <HoverCardContent side="top" collisionPadding={16} className="w-[400px]">
-        <div>
-          This feature is only available with Tabby’s enterprise plan.
+      <HoverCardContent side="top" collisionPadding={16} className="w-[300px] flex flex-col text-sm">
+        <p>
+          This feature is only available with enterprise plan.
+        </p>
+        <p>
           Subscribe to to use this feature.
-        </div>
-        <div className="mt-4 text-center">
-          <Link className={buttonVariants()} href="/settings/subscription">
-            Subscribe
-          </Link>
-        </div>
+        </p>
+        <Link className={cn(buttonVariants({ size: "sm" }), "mt-4")} href="/settings/subscription">
+          Subscribe
+        </Link>
       </HoverCardContent>
       <HoverCardTrigger
         asChild
