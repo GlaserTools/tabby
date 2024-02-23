@@ -103,12 +103,12 @@ const LicenseGuard = React.forwardRef<
     <HoverCard open={open} onOpenChange={onOpenChange} openDelay={100}>
       <HoverCardContent side="top" collisionPadding={16} className="w-[400px]">
         <div>
-          This feature is only available on Tabby’s {licensesString} license.
-          Upgrade to use this feature.
+          This feature is only available with Tabby’s subscription plan.
+          Subscribe to to use this feature.
         </div>
         <div className="mt-4 text-center">
           <Link className={buttonVariants()} href="/settings/subscription">
-            Upgrade to {licensesString}
+            Subscribe
           </Link>
         </div>
       </HoverCardContent>
