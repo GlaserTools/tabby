@@ -103,7 +103,7 @@ const LicenseGuard = React.forwardRef<
     <HoverCard open={open} onOpenChange={onOpenChange} openDelay={100}>
       <HoverCardContent side="top" collisionPadding={16} className="w-[400px]">
         <div>
-          This feature is only available with Tabby’s subscription plan.
+          This feature is only available with Tabby’s enterprise plan.
           Subscribe to to use this feature.
         </div>
         <div className="mt-4 text-center">
